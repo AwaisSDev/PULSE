@@ -1,4 +1,4 @@
-# HAADS - Hospital Adaptive Anomaly Detection System
+# PULSE - Patient-monitoring Unit for Low-resource Sepsis Early-warning
 > A sub-$50, fully offline, edge-AI early warning system for sepsis in low-resource hospital wards.
 
 ---
@@ -15,7 +15,7 @@ Existing solutions (Epic, Cerner, commercial CDSS) cost $50,000–$200,000+ and 
 
 ## The Solution
 
-HAADS is a bedside device that:
+PULSE is a bedside device that:
 - **Monitors** 3 vitals continuously (SpO2, Heart Rate, Temperature)
 - **Predicts** sepsis risk using a lightweight quantized ML model running entirely on-device
 - **Alerts** nurses with a simple Green/Yellow/Red system + protocol-aligned reminders
@@ -75,7 +75,7 @@ Nurse sees: 🟢 Stable  🟡 Watch  🔴 Act Now
 
 ## Clinical Decision Support
 
-HAADS does **not** diagnose or prescribe. At 🔴 Red alert, it surfaces protocol-aligned reminders:
+PULSE does **not** diagnose or prescribe. At 🔴 Red alert, it surfaces protocol-aligned reminders:
 
 - Check Airway, Breathing, Circulation (ABCs)
 - Call attending doctor immediately
@@ -88,7 +88,7 @@ This amplifies nurse awareness without replacing clinical judgment.
 
 ## Why This Hasn't Been Done
 
-| Barrier | Why It Blocks Existing Solutions | How HAADS Solves It |
+| Barrier | Why It Blocks Existing Solutions | How PULSE Solves It |
 |---------|----------------------------------|---------------------|
 | No continuous vitals in general wards | All ML models assume digitally available data | We build the hardware that creates the data |
 | No internet / EHR | Cloud AI and Epic integrations impossible | 100% offline edge inference |
@@ -160,7 +160,7 @@ Remaining funds for spare parts, shipping, and iteration.
 
 ## Why Hack Club
 
-HAADS is hardware that matters. It's not a gadget - it's a device designed to catch sepsis 4 hours earlier in a government hospital ward where patients currently die silently between nurse rounds. Every hour earlier improves survival by ~7%. From a $30 device. Built by a student who can see the hospital from his house.
+PULSE is hardware that matters. It's not a gadget - it's a device designed to catch sepsis 4 hours earlier in a government hospital ward where patients currently die silently between nurse rounds. Every hour earlier improves survival by ~7%. From a $30 device. Built by a student who can see the hospital from his house.
 
 We need the parts to build it. Hack Club gets us there.
 
@@ -168,7 +168,7 @@ We need the parts to build it. Hack Club gets us there.
 
 ## Links
 
-- **Research Concept Document:** [PDF](./docs/HAADS_Concept_Document.pdf)
+- **Research Concept Document:** [PDF](./docs/PULSE_Concept_Document.pdf)
 - **JOURNAL.md:** [Build log & research notes](./JOURNAL.md)
 - **MIMIC-IV Data Pipeline:** [Coming soon](./src/)
 - **Hardware Schematics:** [Coming soon](./hardware/)
@@ -178,7 +178,7 @@ We need the parts to build it. Hack Club gets us there.
 # JOURNAL.md
 
 ## 2026-08-20 - Literature Review
-Read 2022 JAMIA Open paper: GBDT with HR + Temp achieves 0.94 AUROC on ICU data. Key insight: 2 vitals alone can be powerful. HAADS adds SpO2 and constrains for edge deployment - novel gap.
+Read 2022 JAMIA Open paper: GBDT with HR + Temp achieves 0.94 AUROC on ICU data. Key insight: 2 vitals alone can be powerful. PULSE adds SpO2 and constrains for edge deployment - novel gap.
 
 ## 2026-08-22 - Sensor Selection
 Finalized MAX30102 for SpO2/HR and MLX90614 for temp. Both I2C, both proven, both low power. Contactless temp avoids infection control issues. BP deferred to manual entry for V1.
@@ -191,4 +191,4 @@ Drafted README for Hack Club Highway. Target: $250-350 for 3 prototype units + V
 
 ---
 
-HAADS is an investigational patient monitoring system for clinical research. It is designed to augment - not replace - routine nursing assessment and clinical judgment. Deployment on patients requires institutional ethics approval, informed consent, and physician oversight per local regulatory guidelines (DRAP, Pakistan). This repository documents the engineering and research methodology only.
+PULSE is an investigational patient monitoring system for clinical research. It is designed to augment - not replace - routine nursing assessment and clinical judgment. Deployment on patients requires institutional ethics approval, informed consent, and physician oversight per local regulatory guidelines (DRAP, Pakistan). This repository documents the engineering and research methodology only.
